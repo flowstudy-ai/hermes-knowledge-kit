@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile
+        run: python -m compileall -q src tests scripts
+      - name: Test
+        run: python -m unittest discover -s tests -v
+      - name: Build zipapp
+        run: python scripts/build_zipapp.py
+      - name: Check tracked secrets and private artifacts
+        run: python scripts/check_release_tree.py

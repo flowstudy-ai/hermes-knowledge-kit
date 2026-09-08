@@ -1,0 +1,12 @@
+.sandbox/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+auth.json
+*.db
+*.db-*
+dist/
+build/
+*.egg-info/
