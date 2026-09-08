@@ -1,6 +1,6 @@
 # Hermes Knowledge Kit
 
-[![CI](https://github.com/flowstudy/hermes-knowledge-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/flowstudy/hermes-knowledge-kit/actions/workflows/ci.yml)
+[![CI](https://github.com/flowstudy-ai/hermes-knowledge-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/flowstudy-ai/hermes-knowledge-kit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Kit local e reversível para transformar documentos Markdown usados com Hermes Agent em conhecimento recuperável, auditável e portátil — sem banco vetorial, SaaS, cron ou alteração da identidade do agente.
@@ -28,7 +28,7 @@ Kit local e reversível para transformar documentos Markdown usados com Hermes A
 
 ## Instalação rápida
 
-Baixe `hermes-knowledge-kit.pyz` na página de [Releases](https://github.com/flowstudy/hermes-knowledge-kit/releases), confira o SHA-256 publicado e execute:
+Baixe `hermes-knowledge-kit.pyz` na página de [Releases](https://github.com/flowstudy-ai/hermes-knowledge-kit/releases), confira o SHA-256 publicado e execute:
 
 ```bash
 python3 hermes-knowledge-kit.pyz doctor
