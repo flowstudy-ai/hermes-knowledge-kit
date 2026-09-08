@@ -10,7 +10,7 @@ Todas as mudanças relevantes serão registradas aqui. O formato segue Keep a Ch
 - Manifesto com hashes, journal de interrupção e lock cooperativo.
 - Rejeição de path relativo, traversal, symlink, hardlink, arquivo especial e manifesto adulterado.
 - Templates locais AGENTS/MAPA/context/projects/procedures.
-- Testes stdlib, zipapp instalável e CI sem credenciais.
+- Testes stdlib, zipapp instalável e byte determinístico, e CI sem credenciais.
 
 ### Limites
 - Auditoria documental rica, Holographic e backup foram adiados.

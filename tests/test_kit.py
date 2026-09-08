@@ -1,9 +1,11 @@
 import json
+import hashlib
 import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 
@@ -176,6 +178,14 @@ class KitTests(unittest.TestCase):
         with patch.object(cli.os, 'fsync', wraps=os.fsync) as sync:
             cli.atomic_write(self.root / 'file', b'data')
         self.assertGreaterEqual(sync.call_count, 2)
+
+    def test_zipapp_is_byte_deterministic(self):
+        first = self.root / 'first.pyz'
+        second = self.root / 'second.pyz'
+        subprocess.run([sys.executable, str(ROOT / 'scripts/build_zipapp.py'), str(first)], check=True, capture_output=True)
+        time.sleep(2.1)
+        subprocess.run([sys.executable, str(ROOT / 'scripts/build_zipapp.py'), str(second)], check=True, capture_output=True)
+        self.assertEqual(hashlib.sha256(first.read_bytes()).digest(), hashlib.sha256(second.read_bytes()).digest())
 
     def test_zipapp(self):
         artifact = self.root / 'kit.pyz'
