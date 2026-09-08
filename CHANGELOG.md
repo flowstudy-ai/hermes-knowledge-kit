@@ -2,7 +2,7 @@
 
 Todas as mudanças relevantes serão registradas aqui. O formato segue Keep a Changelog; o projeto usa versionamento semântico após a primeira publicação.
 
-## [Não publicado]
+## [0.1.0] — 2026-09-08
 
 ### Adicionado
 - CLI `doctor`, `plan`, `install`, `verify`, `status`, `uninstall` e `rollback`.
